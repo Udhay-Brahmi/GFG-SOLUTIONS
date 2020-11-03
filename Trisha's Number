@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int palidrone(string h){
+    string s="" , g="";
+    int k = (h.length()/2) , p;
+    if(h.length()%2!=0){p=1;}
+    else{p=0;}
+    s+=h.substr(0 , k);
+    g+=h.substr((k+p) , k);
+    reverse(g.begin() , g.end());
+    return (g==s) ? 1:0;
+}
+int main() {
+	//code
+	int n,a;
+	cin>>n;
+	string h;
+	while(n--){
+        cin>>a;
+        a++;
+        string h = to_string(a);
+	    while(palidrone(h)!=1){
+	        a++;
+	        h=to_string(a);
+	    }
+	    cout<<a<<endl;
+	}
+	return 0;
+}
