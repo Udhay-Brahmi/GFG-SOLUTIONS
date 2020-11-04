@@ -1,0 +1,14 @@
+
+class Solution{
+public:
+    long long int nonFibonacci(int N){
+        // code here
+        long long int k=1;int c=0;
+        while(c!=N){
+            if(ceil(sqrt(5*k*k -4))==floor(sqrt(5*k*k-4))|| ceil(sqrt(5*k*k +4))==floor(sqrt(5*k*k+4)) ){}
+            else{c++;}
+            k++;
+        }
+        return (k-1);
+    }
+};
