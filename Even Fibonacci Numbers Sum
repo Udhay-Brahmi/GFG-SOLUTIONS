@@ -1,0 +1,16 @@
+
+class Solution{
+public:
+    long long evenFibSum(int N){
+        // code here
+        int sum=0;
+        long long a=1,b=0;
+        for(int i=1;i<=N;i++){
+            if(a%2==0){sum+=a;}
+            a=a+b;
+            b=a-b;
+            if(a>N){break;}
+        }
+        return sum;
+    }
+};
