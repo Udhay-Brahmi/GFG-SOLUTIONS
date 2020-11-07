@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    int sum=0;
+	    while(a>0){
+	        if(a%10==2||a%10==3||a%10==5||a%10==7){sum+=(a%10);}
+	        a/=10;
+	    }
+	    cout<<sum<<endl;
+	}
+	return 0;
+}
