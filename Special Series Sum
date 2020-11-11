@@ -1,0 +1,8 @@
+ class Solution {
+  public:
+    long long int sumOfTheSeries(long long int n){
+        // code here
+        long long int y = n*(n+1)*(n+2)/6;
+        return y;
+    }
+};
