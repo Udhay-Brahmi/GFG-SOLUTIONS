@@ -1,0 +1,14 @@
+int sum=0;
+void fun(Node *root){
+    if(!root)return;
+    fun(root->left);
+    if(root->left==NULL&&root->right==NULL){sum+=root->data;}
+    fun(root->right);
+}
+int sumOfLeafNodes(Node *r ){
+     /*Your code here */
+     fun(r);
+     int y = sum;
+     sum=0;
+     return y;
+}
