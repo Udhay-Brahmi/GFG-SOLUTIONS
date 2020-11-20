@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+	int t;  cin>>t;
+	while(t--)
+	{
+	    int n,e,d;  cin>>n>>e; 
+	    for(int i=0;i<2*e;i++) {cin>>d;}
+	    cout<<e<<endl;
+	}
+	return 0;
+}
