@@ -1,0 +1,15 @@
+int sum=0;
+void fun(Node *root){
+    if(!root)return;
+    fun(root->left);
+    if(root->key!=-1){sum+=root->key;}
+    fun(root->right);
+}
+long int sumBT(Node* root)
+{
+    // Code here
+    fun(root);
+    int y = sum;
+    sum=0;
+    return y;
+}
