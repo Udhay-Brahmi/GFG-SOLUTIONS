@@ -1,0 +1,13 @@
+void fun(Node *root , vector<int> &vec){
+    if(!root)return;
+    vec.push_back(root->data);
+    fun(root->left,vec);
+    fun(root->right,vec);
+}
+vector <int> preorder(Node* root)
+{
+  // Your code here
+  vector<int> vec;
+  fun(root,vec);
+  return vec;
+}
