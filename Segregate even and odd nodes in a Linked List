@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    vector<int> even,odd;int d;
+	    for(int i=0;i<a;i++){
+	        cin>>d;
+	        if(d%2==0){even.push_back(d);}
+	        else{odd.push_back(d);}
+	    }
+	    for(auto e : even){cout<<e<<" ";}
+	    for(auto e: odd){cout<<e<<" ";}
+	    cout<<endl;
+	}
+	return 0;
+}
