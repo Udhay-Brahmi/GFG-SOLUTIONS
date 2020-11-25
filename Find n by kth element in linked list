@@ -1,0 +1,12 @@
+int fractional_node(struct Node *head, int k)
+{
+    // your code here
+    vector<int> m;int c=0;
+    while(head!=NULL){
+        m.push_back(head->data);
+        head =head->next;
+        c++;
+    }
+    float d=c;
+    return m[ceil(d/k)-1];
+}
