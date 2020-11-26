@@ -1,0 +1,13 @@
+char getMaxOccuringChar(char* s)
+{
+    // Your code here
+    map<char,int> m;
+    for(int i=0;s[i]!=NULL;i++){
+        m[s[i]]++;
+    }
+    char c;int max=0;
+    for(auto e:m){
+        if(e.second>max){max =e.second;c =e.first;}
+    }
+    return c;
+}
