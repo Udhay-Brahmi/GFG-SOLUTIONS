@@ -1,0 +1,106 @@
+// { Driver Code Starts
+#include<iostream>
+using namespace std;
+
+/* Link list Node */
+struct Node
+{
+    int data;
+    struct Node *next;
+    
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
+};
+
+Node* sortedMerge(struct Node* a, struct Node* b);
+
+/* Function to print Nodes in a given linked list */
+void printList(struct Node *n)
+{
+    while (n!=NULL)
+    {
+        cout << n->data << " ";
+        n = n->next;
+    }
+    cout << endl;
+}
+
+/* Driver program to test above function*/
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,m;
+        cin>>n>>m;
+
+        int data;
+        cin>>data;
+        struct Node *head1 = new Node(data);
+        struct Node *tail1 = head1;
+        for (int i = 1; i < n; ++i)
+        {
+            cin>>data;
+            tail1->next = new Node(data);
+            tail1 = tail1->next;
+        }
+
+        cin>>data;
+        struct Node *head2 = new Node(data);
+        struct Node *tail2 = head2;
+        for(int i=1; i<m; i++)
+        {
+            cin>>data;
+            tail2->next = new Node(data);
+            tail2 = tail2->next;
+        }
+
+        Node *head = sortedMerge(head1, head2);
+        printList(head);
+    }
+    return 0;
+}
+// } Driver Code Ends
+
+
+ 
+
+/* Link list Node
+struct Node {
+  int data;
+  struct Node *next;
+  
+  Node(int x) {
+    data = x;
+    next = NULL;
+  }
+};
+*/
+#include<bits/stdc++.h>
+Node* sortedMerge(Node* head_A, Node* head_B)  
+{  
+    // code here
+    vector<int> vec;
+    while(head_A!=NULL){
+        vec.push_back(head_A->data);
+        head_A = head_A ->next;
+    }
+    while(head_B!=NULL){
+        vec.push_back(head_B->data);
+        head_B = head_B->next;
+    }
+    sort(vec.begin(),vec.end());
+    struct Node *abc = new Node(0);
+    struct Node *pre=abc;
+    for(auto e:vec){
+        struct Node *temp =new Node(e);
+        pre->next=temp;
+        pre=temp;
+    }
+    pre=NULL;
+    return (abc->next);
+}  
