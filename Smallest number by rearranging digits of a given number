@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n;
+	cin>>n;
+	string h;
+	while(n--){
+	    cin>>h;
+	    string s="";int c=0;
+	    for(int i=0;i<h.length();i++){
+	        if(h[i]!='0'){s+=h[i];}
+	        else{c++;}
+	    }
+	    sort(s.begin() , s.end());
+	//    reverse(s.begin() , s.end());
+	    cout<<s[0]<<string(c , '0');
+	    for(int i=1;i<s.length();i++){
+	        cout<<s[i];
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
