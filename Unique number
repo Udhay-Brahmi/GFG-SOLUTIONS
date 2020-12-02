@@ -1,0 +1,50 @@
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+
+
+//User function Template for C++
+class Solution
+{
+public:
+    vector<int> uniqueNumbers(int L,int R)
+    {
+        // Write Your Code here
+        vector<int> vec;
+        for(int i=L;i<=R;i++){
+            int num =i;
+            int arr[10]={0};
+            bool gu=true;
+            string k=to_string(num);
+            for(int j=0;j<k.length();j++){
+                if(arr[k[j]-48]==0){arr[k[j]-48]++;}
+                else{gu=false;break;}
+            }
+            if(gu){vec.push_back(num);}
+        }
+        return vec;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int l,r ;
+        cin >> l >> r;
+		Solution ob;
+		vector<int> numbers = ob.uniqueNumbers(l,r);
+		
+		for(int num : numbers){
+		   cout<<num<<" ";
+		}
+		cout<<endl;
+        
+    }
+    return 0;
+}  // } Driver Code Ends
