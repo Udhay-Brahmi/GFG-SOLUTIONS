@@ -1,0 +1,35 @@
+ // } Driver Code Ends
+
+
+//User function Template for C++
+
+int digitsInFactorial(int n)
+{
+    // code here
+    if(n<0){return 0;}
+    if(n<=1){return 1;}
+    double x= n* log10(( n/ M_E)) + log10(2*M_PI*n)/2.0;
+    return floor(x)+1;
+}
+
+// { Driver Code Starts.
+
+int main()
+{
+    int T;
+    
+    //taking testcases
+    cin>>T;
+    while(T--)
+    {
+        int N;
+        
+        //taking N
+        cin>>N;
+        
+        //calling method digitsInFactorial()
+        cout<<digitsInFactorial(N)<<endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
