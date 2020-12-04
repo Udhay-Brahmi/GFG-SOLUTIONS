@@ -1,0 +1,36 @@
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+// User function template for C++
+
+class Solution {
+  public:
+    vector<int> nearestPerfectSquare(int N) {
+        // code here
+        vector<int> vec;
+        long long int a = ceil(sqrt(N))*ceil(sqrt(N));
+        long long int b = floor(sqrt(N))*floor(sqrt(N));
+        if(abs(a-N)>abs(b-N)){vec.push_back(b);vec.push_back(abs(b-N));}
+        else{vec.push_back(a);vec.push_back(abs(a-N));}
+        return vec;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        vector<int> ans = ob.nearestPerfectSquare(N);
+        cout << ans[0] << " " << ans[1] << "\n";
+    }
+}  // } Driver Code Ends
