@@ -1,0 +1,41 @@
+Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+//User function template for C++
+class Solution{
+public:	
+	
+	int onlyFirstAndLastAreSet(long long int n) { 
+	    //complete the function here
+	    if(n&1==0 || n==2)return 0;
+	    n=n>>1;int d;
+	    while(n>>1){
+	        if(n&1){return 0;}
+	        n=n>>1;
+	        d=n;
+	    }
+	    if(d&1==0)return 0;
+	    return 1;
+	}
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        long long n;
+        cin >> n;
+        Solution ob;
+        cout << ob.onlyFirstAndLastAreSet(n) << endl;
+    }
+    
+return 0;
+}
+
+  // } Driver Code Ends
