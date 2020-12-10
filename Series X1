@@ -1,0 +1,35 @@
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+
+THIS QUESTION IS ALREADY SOLVED
+class Solution
+{
+public:
+    long long X1Series(int x)
+    {
+        long long int a =(x*x )+ 1;
+        long long int y =(a*x);
+        return y;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int X;
+        cin>>X;
+      
+        Solution ob;
+        long long ans = ob.X1Series(X);
+     
+        cout<< ans << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
