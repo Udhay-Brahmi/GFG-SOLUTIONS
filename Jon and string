@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n;cin>>n;
+	string h;
+	while(n--){
+	    cin>>h;
+	    string vov="",con="";
+	    for(int i=0;i<h.length();i++){
+	        if(h[i]=='a'||h[i]=='e'||h[i]=='i'||h[i]=='o'||h[i]=='u'){
+	            vov+=h[i];
+	        }
+	        else{
+	            con+=h[i];
+	        }
+	    }
+	    sort(vov.begin(),vov.end());
+	    sort(con.begin(),con.end());
+	    if(h[0]=='a'||h[0]=='e'||h[0]=='i'||h[0]=='o'||h[0]=='u'){
+	        int i=0,j=0;
+	        while(i<vov.length() || j< con.length()){
+	            if(i<vov.length()){
+	                cout<<vov[i];
+	            }
+	            if(j<con.length()){
+	                cout<<con[i];
+	            }
+	            i++;j++;
+	        }
+	    }
+	    else{
+	        int i=0,j=0;
+	        while(i<vov.length() || j< con.length()){
+	            if(j<con.length()){
+	                cout<<con[i];
+	            }
+	            if(i<vov.length()){
+	                cout<<vov[i];
+	            }
+	            i++;j++;
+	        }
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
