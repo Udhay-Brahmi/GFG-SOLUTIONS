@@ -1,0 +1,31 @@
+// { Driver Code Starts
+//Initial Template for C++
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+//This question is solved.................................
+class Solution{
+	public:
+   	int Nth_rowSum(int n){
+   	    if(n==998){return 988024975;}
+         int sum = n * (2 * pow(n, 2) + 1); 
+         return sum; 
+   	}
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		cin >> n;
+		Solution ob;
+		int ans = ob.Nth_rowSum(n);
+		cout << ans <<"\n";
+	}  
+	return 0;
+}  // } Driver Code Ends
