@@ -1,0 +1,35 @@
+Driver Code Starts
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+
+
+class Solution {
+  public:
+    long long smallestKDigitNum(long long X, long long K) {
+        // code here
+        long long int a =pow(10,(K-1));
+        if(a%X==0)return a;
+        return ((a+X) - (a+X)%X);
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long X,K;
+        
+        cin>>X>>K;
+
+        Solution ob;
+        cout << ob.smallestKDigitNum(X,K) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
