@@ -1,0 +1,53 @@
+// { Driver Code Starts
+ 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+class Solution
+{
+    public:
+    string binaryNextNumber(string s)
+    {
+        reverse(s.begin() , s.end());
+        int carry =1;string h="";
+        for(int i=0;i<s.length();i++){
+            if(carry==1 && (s[i] -'0')){
+                h+='0';
+                carry=1;
+            }
+            else if(carry==0 && (s[i] -'0')==0 ){h+='0';carry=0;}
+            else{
+                h+='1';carry=0;
+            }
+        }
+        if(carry)h+=(carry+'0');
+        reverse(h.begin() , h.end());
+        for(int i=0;i<h.length();i++){
+            if(h[i]=='1'){
+                h = h.substr(i,(h.length()-i));
+                break;
+            }
+        }
+        return h;
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{
+   	int t;
+   	cin >> t;
+   	while(t--)
+   	{
+   		string s;
+   		cin >> s;
+   		Solution ob;
+   		cout <<ob.binaryNextNumber(s);
+   		cout << "\n";
+   	}
+
+    return 0;
+}  // } Driver Code Ends
