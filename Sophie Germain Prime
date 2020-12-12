@@ -1,0 +1,53 @@
+// { Driver Code Starts
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+
+bool check(int n){
+    if(n==1)return false;
+    for(int i=2;i<n;i++){
+        if(n%i==0)return false;
+    }
+    return true;
+}
+class Solution{
+	public:
+   	vector<int> sophie_Primes(int N){
+   	    // Code here
+   	    int arr[N+1]={0};
+        for(int i=2;i<=sqrt(N);i++){
+            int k=i;
+            k+=i;
+            while(k<=N){
+                arr[k]=1;
+                k+=i;
+            }
+        }
+        vector<int> vec;
+        for(int i=2;i<N;i++){
+            if(arr[i]==0 and check((2*i + 1))){vec.push_back(i);}
+        }
+        return vec;
+   	}    
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		cin >> n;
+		Solution ob;
+		vector<int> ans = ob.sophie_Primes(n);
+		for(auto i: ans)
+			cout << i <<" ";
+		cout << "\n";
+	}  
+	return 0;
+}  // } Driver Code Ends
