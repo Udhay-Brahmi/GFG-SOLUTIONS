@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+bool check(int n){
+     if(n==1)return false;
+     for(int i=2;i<n;i++){
+         if(n%i==0)return false;
+     }
+     return true;
+ }
+int main() {
+	//code
+	int t ;cin>>t;
+	while(t--){
+	int n,sum=0,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    sum+=a;
+	}
+	int k=0;
+	while(1){
+	    if(check(sum)){cout<<k<<endl;break;}
+	    k++;sum++;
+	}
+	}
+	return 0;
+}
