@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int n;
+	cin>>n;
+	string a , b;
+	while(n--){
+	    cin>>a>>b;
+	    string j="";
+        for(int i=0;i<a.length();i++){
+            if(a[i]==b[0]){
+                string h =a.substr(i,b.length());
+                if(h==b){i+=b.length()-1;j+='X';}
+                else{j+=a[i];}
+            }
+            else{j+=a[i];}
+        }
+        for(int i=0;i<=j.length();i++){
+            if(j[i]!=j[i+1] || j[i]!='X'){cout<<j[i];}
+        }
+        cout<<endl;
+	}
+	return 0;
+}
