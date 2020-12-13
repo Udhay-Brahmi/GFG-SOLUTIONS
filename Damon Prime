@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+bool check(int n){
+    if(n==1)return false;
+    for(int i=2;i<n;i++){
+        if(n%i==0)return false;
+    }
+    return true;
+}
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    if(a==1){cout<<"No"<<endl;}
+	    if(check(a-1) && check(a+1)){cout<<"Yes"<<endl;}
+	    else{cout<<"No"<<endl;}
+	}
+	return 0;
+}
