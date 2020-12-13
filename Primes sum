@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	int arr[1000001]={0};
+	for(int i=2;i<1000000;i++){
+	   int k=i;
+	   k+=i;
+	   while(k<=1000000){
+	       arr[k]=1;
+	       k+=i;
+	   }
+	}
+	while(n--){
+	    cin>>a;
+	    bool gu=true;
+	    for(int i=2;i<a;i++){
+	        if(((a-i)!=1)&&arr[i]==0 && arr[(a-i)]==0){cout<<"Yes"<<endl;gu=false;break;}
+	    }
+	    if(gu)cout<<"No"<<endl;
+	}
+	return 0;
+}
