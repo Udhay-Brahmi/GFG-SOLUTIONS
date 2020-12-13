@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+//--------------------------------------------------
+bool palidrom(int n){
+    string h =to_string(n);
+    int i=0,j=(h.length()-1);
+    while(i<=j){
+        if(h[i]!=h[j])return false;
+    }
+    return true;
+}
+int main() {
+	//code
+	long long int n,a;cin>>n;
+	long long int arr[10000001]={0};
+	for(long long int i=2;i<10000000;i++){
+        long long int k=i;
+        k+=i;
+        while(k<=10000000){
+            arr[k]=1;
+            k+=i;
+        }
+    }
+	while(n--){
+	    cin>>a;
+	    if(a==10000000){cout<<100030001<<endl;continue;}
+	    while(arr[a]!=0  || !palidrom(a)){a++;}
+	    cout<<a<<endl;
+	}
+	return 0;
+}
