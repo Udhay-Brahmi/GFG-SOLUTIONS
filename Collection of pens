@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+bool check(int n){
+    if(n==1)return false;
+    for(int i=2;i<n;i++){
+        if(n%i==0)return false;
+    }
+    return true;
+}
+int main() {
+	//code
+	int n,a,b;cin>>n;
+	while(n--){
+	    cin>>a>>b;
+	    int sum=a+b,k=1;sum++;
+	    while(!check(sum)){
+	        sum++;k++;
+	    }
+	    cout<<k<<endl;
+	}
+	return 0;
+}
