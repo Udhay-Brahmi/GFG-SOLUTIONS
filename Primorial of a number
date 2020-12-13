@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    int arr[a+1]={0};
+	    for(int i=2;i<=sqrt(a);i++){
+	        int k=i;
+	        k+=i;
+	        while(k<=a){
+	            arr[k]=1;
+	            k+=i;
+	        }
+	    }
+	    long long int sum=1;
+	    for(int i=2;i<=a;i++){
+	        if(arr[i]==0){sum = (sum*i)%1000000007;}
+	    }
+	    cout<<sum<<endl;
+	}
+	return 0;
+}
