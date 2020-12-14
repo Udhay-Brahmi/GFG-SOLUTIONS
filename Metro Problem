@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;char c;cin>>n;
+	while(n--){
+	    cin>>a>>c;
+	    int k=0;
+	    if(c=='D'){
+	        if(a>=11){k+=(a-11);}
+	        else{
+	            k+= 11 + a;
+	        }
+	    }
+	    if(c=='U'){
+	       if(a<=11){k+=(11-a);}
+	       else{
+	           k+= 8 + (19 - a);
+	       }
+	    }
+	    cout<<k<<endl;
+	}
+	return 0;
+}
