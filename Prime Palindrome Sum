@@ -1,0 +1,55 @@
+// { Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+//User function Template for C++
+
+bool pal(int n){
+    string h =to_string(n),j=to_string(n);
+    reverse(j.begin() , j.end());
+    return h==j;
+    
+}
+class Solution {
+  public:
+    long long getPPS(int a, int b) {
+        // code here
+        int arr[b+1]={0};
+        for(int i=2;i<b;i++){
+            int k=i;
+            k+=i;
+            while(k<=b){
+                arr[k]=1;
+                k+=i;
+            }
+        }
+        int k;
+        long long int sum=0;
+        if(a>=2){k=a;}
+        else{k=2;}
+        for(int i=k;i<=b;i++){
+            if(arr[i]==0 and pal(i))sum+=i;
+        }
+        return sum;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int a,b;
+        
+        cin>>a>>b;
+
+        Solution ob;
+        cout << ob.getPPS(a,b) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
