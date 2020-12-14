@@ -1,0 +1,52 @@
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+// User function Template for C++
+class Solution {
+  public:
+    vector<int> primeTwins(int L, int R) {
+        // code here
+        int arr[R+1]={0};
+        for(int i=2;i<R;i++){
+            int k=i;
+            k+=i;
+            while(k<=R){
+                arr[k]=1;
+                k+=i;
+            }
+        }
+        int p;vector<int> vec;
+        if(L>=2){p=L;}
+        else{p=2;}
+        for(int i=p;i<=R;i++){
+            if( (i+2)<=R and arr[i]==0 and arr[(i+2)]==0 ){
+                vec.push_back(i);
+                vec.push_back(i+2);
+                return vec;
+            }
+        }
+        vec.clear();
+        vec.push_back(-1);return vec;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int L,R;
+        cin >> L >> R;
+        Solution ob;
+        vector<int>ans=ob.primeTwins(L,R);    
+        for(int i=0;i<ans.size();i++)cout<<ans[i]<<" ";
+        cout<<endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
