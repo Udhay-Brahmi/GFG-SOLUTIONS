@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n;cin>>n;
+	while(n--){
+	    string h,j="";
+	    cin>>h;int sum=0;
+	    for(int i=0;i<h.length();i++){
+	        j+=(char)(h[i] - '0' + 'a' );
+	        sum+=(h[i]-'0');
+	    }
+	    string k="";
+	    for(int i=0;i<sum;i++){
+	        k+=j;
+	    }
+	    string z = k.substr(0 , sum),l = k.substr(0 , sum);
+	    reverse(z.begin() , z.end());
+	    if(l==z){cout<<"YES"<<endl;}
+	    else{cout<<"NO"<<endl;}
+	}
+	return 0;
+}
