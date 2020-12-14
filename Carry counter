@@ -1,0 +1,49 @@
+// { Driver Code Starts
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+
+class Solution {
+  public:
+    int getCarries(string N , string M) {
+        // code here
+        reverse(N.begin() , N.end());
+        reverse(M.begin(),M.end());
+        int i=0,j=0;int counter=0,carry=0;
+        while(i<N.length() && j < M.length()){
+            carry=((N[i] -'0') + (M[j]-'0') + carry)/10;
+            counter+=carry;
+            i++;j++;
+        }
+        while(i<N.length()){
+            carry = ((N[i]-'0')+carry)/10;
+            counter+=carry;
+            i++;
+        }
+        while(j<M.length()){
+            carry = ((M[j]-'0')+carry)/10;
+            counter+=carry;
+            j++;
+        }
+        return counter;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string N,M;
+        
+        cin>>N>>M;
+
+        Solution ob;
+        cout << ob.getCarries(N,M) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
