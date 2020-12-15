@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+//This question is already solved................
+int main() {
+	//code
+	long long int n,a,b,c;cin>>n;
+	while(n--){
+	    cin>>a>>b>>c;bool gu = true;
+	    while(c--){
+	        if(gu){
+	            a=a*2;
+	            gu=false;
+	        }
+	        else{
+	            b=b*2;
+	            gu=true;
+	        }
+	    }
+	    long long int z = max(a,b),x = min(a,b);
+	    cout<<(z/x)<<endl;
+	}
+	return 0;
+}
