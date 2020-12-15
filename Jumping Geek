@@ -1,0 +1,32 @@
+// { Driver Code Starts
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+
+class Solution {
+  public:
+    string jumpingGeek(int n) {
+        // code here
+        if((n%6)==0 || (n)%6==1 || n%6==3)return "yes";
+        return "no";
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.jumpingGeek(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
