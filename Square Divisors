@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    int k=0,i=0,m=1;
+	    while(i<=a){
+	        i =m*m;
+	        if(a%i==0)k++;
+	        m++;
+	    }
+	    cout<<k<<endl;
+	}
+	return 0;
+}
