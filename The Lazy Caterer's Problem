@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main() {
+	//code
+	long long int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    cout<<(a*(a+1))/2 + 1<<endl;
+	}
+	return 0;
+}
