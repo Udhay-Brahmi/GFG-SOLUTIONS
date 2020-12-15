@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    string h,j;int z,x,y,ma=0;
+	    map<string , int> m;
+	    vector<string> vec;
+	    while(a--){
+	        cin>>h>>x>>y>>z;
+	        int sum = (x+y+z)/3;
+	        m[h] =sum;
+	        vec.push_back(h);
+	        ma=max(ma,sum);
+	    }
+	    for(auto e:vec){
+	        if(m[e] == ma){cout<<e<<" ";}
+	    }
+	    cout<<ma<<endl;
+	}
+	return 0;
+}
