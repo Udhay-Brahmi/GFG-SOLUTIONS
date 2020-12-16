@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n;cin>>n;
+	while(n--){
+	    char c;int a,b;
+	    cin>>c>>a>>b;
+	    if(c=='h'){
+	        cout<<floor((a-2)/tan((b*3.14)/180.0))<<endl;
+	    }
+	    else{
+	        cout<<floor(a*tan((b*3.14)/180.0) + 2)<<endl;
+	    }
+	}
+	return 0;
+}
