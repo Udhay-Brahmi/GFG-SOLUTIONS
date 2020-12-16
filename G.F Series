@@ -1,0 +1,41 @@
+Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+
+
+//User function Template for C++
+class Solution
+{
+public:
+    int gfSeries(int n)
+    {
+        long long int fb[n];
+        if(n<=1){cout<<0<<endl;return 0;}
+        if(n<=2){cout<<0<<" "<<1<<endl;return 0;}
+        fb[0]=0;fb[1]=1;
+        cout<<0<<" "<<1<<" ";
+        for(long long int i=2;i<n;i++){
+            fb[i] = (fb[i-2]*fb[i-2] - fb[i-1]);
+            cout<<fb[i]<<" ";
+        }
+        cout<<endl;
+        return 0;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        ob.gfSeries(N);
+    }
+    return 0;
+}  // } Driver Code Ends
