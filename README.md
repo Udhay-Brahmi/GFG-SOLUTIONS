@@ -1,5 +1,5 @@
 # GFG-SOLUTIONS
-This repository consist of solutions of Data structure/Algorithm problems given on GFG( coding platform ).
+This repository contain solutions to Data structure/Algorithm problems given on GFG( coding platform ).
 Feel free to add/use it.
 HAPPY CODING !!
-> In order to know question statement preffer gfg official webside.
+> In order to know question statement use gfg official webside.
