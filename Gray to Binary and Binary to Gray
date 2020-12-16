@@ -1,0 +1,50 @@
+// { Driver Code Starts
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+
+
+class Solution {
+  public:
+    string binToGrey(string B) {
+        // code here
+       string h="";h+=B[0];
+       for(int i=1;i<B.length();i++){
+           if(B[i]==B[i-1]){h+='0';}
+           else{h+='1';}
+       }
+        return h;
+    }
+    
+    string greyToBin(string G) {
+        // code here
+        string j ="";j+=G[0];
+        for(int i=1;i<G.length();i++){
+            if(G[i]==j[i-1]){j+='0';}
+            else{j+='1';}
+        }
+        return j;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string B,G;
+        
+        cin>>B;
+        cin>>G;
+
+        Solution ob;
+        cout << ob.binToGrey(B) << endl;
+        cout << ob.greyToBin(G) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
