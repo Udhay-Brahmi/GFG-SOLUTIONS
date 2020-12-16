@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n;cin>>n;
+	while(n--){
+	    float a,b,c;
+	    cin>>a>>b>>c;
+	    cout<<fixed<<setprecision(2)<<(float)((2*3.14*a*(c-b))/c)<<endl;
+	}
+	return 0;
+}
