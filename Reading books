@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long int n,a,b;cin>>n;
+	while(n--){
+	    cin>>a>>b;
+	    long long int A[a] , B[a];
+	    for(long long int i=0;i<a;i++){
+	        cin>>A[i];
+	    }
+	    for(long long int i=0;i<a;i++){
+	       cin>>B[i];  
+	    }
+	    long long int ma = 0;
+	    for(long long int i=0;i<a;i++){
+	        ma = max(ma , (b/A[i])*B[i]);
+	    }
+	    cout<<ma<<endl;
+	}
+	return 0;
+}
