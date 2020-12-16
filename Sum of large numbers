@@ -1,0 +1,50 @@
+// { Driver Code Starts
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+
+class Solution{
+	public:
+   	string add(string s1, string s2){
+   	    reverse(s2.begin() , s2.end());
+   	    reverse(s1.begin() , s1.end());
+   	    int i=0,j=0,carry=0;string h="";
+   	    while(i<s1.length() && j<s2.length()){
+   	        h+=to_string(((s1[i]-'0') + carry + (s2[j]-'0'))%10);
+   	        carry = ((s1[i]-'0') + carry + (s2[j]-'0'))/10;
+   	        i++;j++;
+   	    }
+   	    
+   	    while(i<s1.length()){
+   	        h+=to_string((s1[i] - '0' + carry)%10);
+   	        carry = ((s1[i]-'0') + carry)/10;
+   	        i++;
+   	    }
+   	    while(j<s2.length()){
+   	        h+=to_string((s2[j] - '0' + carry)%10);
+   	        carry = (carry + (s2[j]-'0'))/10;
+   	        j++;
+   	    }
+   	    if(carry)h+=to_string(carry);
+   	    reverse(h.begin() , h.end());
+   	    return h;
+   	}    
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		string s1, s2;
+		cin >> s1 >> s2;
+		Solution ob;
+		string ans = ob.add(s1, s2);
+		cout << ans <<"\n";
+	}  
+	return 0;
+}  // } Driver Code Ends
