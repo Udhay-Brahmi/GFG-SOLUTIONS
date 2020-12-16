@@ -1,0 +1,32 @@
+// { Driver Code Starts
+# include <bits/stdc++.h>
+using namespace std;
+long long int findPosition(long long int k, long long int n);
+int main()
+{
+    long long int test =0 ;
+    cin>>test; 
+    while(test--)
+    {
+        long long int n,k; 
+        cin>>n; 
+        cin>>k; 
+        
+        cout<<findPosition(k,n)<<endl; 
+        
+    }
+}// } Driver Code Ends
+
+
+long long int findPosition(long long int A, long long int N)
+{
+// Do code
+if(A==1){return 2*N;}
+ long long  int a=0,b=1,k=1;
+ while(1){
+     a = a+b;
+     b = a-b;
+     if(a%A==0 && a!=1){return k*N;}
+     k++;
+ }
+}
