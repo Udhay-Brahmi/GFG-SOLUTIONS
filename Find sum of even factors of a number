@@ -1,0 +1,39 @@
+// { Driver Code Starts
+
+#include<bits/stdc++.h> 
+using namespace std;
+
+ // } Driver Code Ends
+
+
+class Solution{
+public:
+    int evenFactors(int N){
+        // code here
+        int sum=0;if(N==2)return 3;
+        for(int i=1;i<=sqrt(N);i++){
+            if(N%i==0){
+                int y = N/i;
+                if(i%2==0)sum+=i;
+                if(y%2==0 and y!=i)sum+=y;
+            }
+        }
+        return sum;
+    }
+};
+
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout << ob.evenFactors(N) << endl;
+    }
+    return 0; 
+}  // } Driver Code Ends
