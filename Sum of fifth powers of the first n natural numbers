@@ -1,0 +1,33 @@
+// { Driver Code Starts
+// Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+// User function template for C++
+
+class Solution {
+  public:
+    long long sumOfFifthPowers(long long n) {
+        // code here
+        return ((2 * n * n * n * n * n * n) + 
+           (6 * n * n * n * n * n) +  
+           (5 * n * n * n * n) - 
+           (n * n)) / 12; 
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.sumOfFifthPowers(N) << "\n";
+    }
+}  // } Driver Code Ends
