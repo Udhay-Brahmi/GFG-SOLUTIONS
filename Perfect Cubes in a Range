@@ -1,0 +1,48 @@
+Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+// User function Template for C++
+
+class Solution{
+public:
+    vector<int> properCubes(int a, int b){
+        // code 
+        vector<int> vec;
+        int y = ceil(pow(b , (1.0/3.0))),x = ceil(pow(a , (1.0/3.0)));
+        for(int i=x;i<=y;i++){
+            if(i*i*i<=b){
+                vec.push_back((i*i*i));
+            }
+        }
+        if(vec.size()==0)vec.push_back(-1);
+        return vec;
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int a, b;
+        cin>>a>>b;
+        
+        Solution ob;
+        vector<int> v = ob.properCubes(a, b);
+        if(v.size() == 1 && v[0] == -1)
+            cout<<"No\n";
+        else{
+            for(int u: v)
+                cout<<u<<" ";
+            cout<<"\n";
+        }
+    }
+    return 0;
+}  // } Driver Code Ends
