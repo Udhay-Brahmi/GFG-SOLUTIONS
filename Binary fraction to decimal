@@ -1,0 +1,44 @@
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+class Solution {
+  public:
+    long double convertToDecimal(string n) {
+        // code here
+        string h="",j="";bool gu=true;
+        for(int i=0;i<n.length();i++){
+            if(gu){h+=n[i];}
+            else{j+=n[i];}
+            if(n[i]=='.'){gu=false;}
+        }
+        reverse(h.begin() , h.end());
+        h = h.substr(1);
+        long double left =0;
+        for(int i=0;i<h.length();i++){
+            left+= (h[i] - '0')*(pow(2,i));
+        }
+        for(int i=0;i<j.length();i++){
+            left+=(j[i] - '0')*(pow(0.5 , (i+1)));
+        }
+        return left;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string n;
+        
+        cin>>n;
+
+        Solution ob;
+        cout << std::setprecision(100) << ob.convertToDecimal(n) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
