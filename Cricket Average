@@ -1,0 +1,18 @@
+include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;double x,sum=0,k=0;string h;
+	    while(a--){
+	        cin>>x>>h;
+	        sum+=x;
+	        if(h[0]=='o'){k++;}
+	    }
+	    if(k!=0)cout<<ceil(sum/k)<<endl;
+	    else{cout<<-1<<endl;}
+	}
+	return 0;
+}
