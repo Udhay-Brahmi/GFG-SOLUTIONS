@@ -1,0 +1,43 @@
+// { Driver Code Starts
+//Initial template for c++
+
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+
+
+//User function Template for C++
+long long int gcd(long long int a,long long int b){
+    if(a==0)return b;
+    return gcd(b%a , a);
+}
+
+long long lcm(long long int a ,long long int b){
+    return (b/gcd(a,b))*a;
+}
+class Solution{   
+public:
+    long long findValue(int x, int y, int z) { 
+        //complete the function here
+        return gcd(lcm(x,y) ,  lcm(x,z));
+    }
+};
+
+// { Driver Code Starts.
+
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int x, y, z;
+        cin >> x >> y >> z;
+        Solution ob;
+        cout << ob.findValue(x, y, z) << endl;
+    
+    }
+    return 0; 
+} 
+  // } Driver Code Ends
