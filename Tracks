@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+//This question is solved already..................
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    int arr[a]={0};
+	    for(int i=0;i<a;i++)cin>>arr[i];
+	    if(a%2==0){cout<<"No"<<endl;continue;}
+	    if(arr[(a/2)]!=1){cout<<"No"<<endl;continue;}
+	    int y = abs(arr[0] - arr[1]);
+	    for(int i=1;i<(a-1);i++){
+	        if(abs(arr[i] - arr[i+1])!=y){cout<<"No"<<endl;continue;}
+	    }
+	    int i=0,j=a-1;
+	    while(i<=j){
+	        if(arr[i]!=arr[j]){cout<<"No"<<endl;continue;}
+	        i++;j--;
+	    }
+	    cout<<"Yes"<<endl;
+	}
+	return 0;
+}
