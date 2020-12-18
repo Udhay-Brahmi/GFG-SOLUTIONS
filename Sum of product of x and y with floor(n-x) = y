@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;
+	cin>>n;
+	while(n--){
+	    cin>>a;int sum=0;
+	    for(int i=1;i<=a;i++){
+	        int y  = a/i;
+	        sum+=(i*y);
+	    }
+	    cout<<sum<<endl;
+	}
+	return 0;
+}
