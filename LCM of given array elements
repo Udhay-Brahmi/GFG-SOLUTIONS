@@ -1,0 +1,45 @@
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+long long int gcd(long long int a,long long int b){
+    if(a==0)return b;
+    return gcd(b%a , a);
+}
+
+long long lcm(long long int a , long long int b){
+    return (b/gcd(a,b))*a;
+}
+class Solution {
+  public:
+    int lcmOfArray(int N , int A[]) {
+        // code here
+        int ans=A[0];
+        for(int i=1;i<N;i++){
+            ans = (lcm(A[i] , ans))%1000000007;
+        }
+        return ans;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+        int A[N];
+        
+        for(int i=0 ; i<N ; i++)
+            cin>>A[i];
+
+        Solution ob;
+        cout<<ob.lcmOfArray(N,A)<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
