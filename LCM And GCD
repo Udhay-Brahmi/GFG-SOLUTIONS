@@ -1,0 +1,40 @@
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+long long int gcd(long long int a,long long int b){
+    if(a==0){return b;}
+    return gcd(b%a , a);
+}
+
+long long int lcm (long long int a,long long int b){
+    return (b/gcd(a,b))*a;
+}                                                        
+class Solution {
+  public:
+    vector<long long> lcmAndGcd(long long a, long long b) {
+        // code here
+        vector<long long > vec;
+        vec.push_back(lcm(a,b));
+        vec.push_back(gcd(a,b));
+        return vec;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long A,B;
+        
+        cin>>A>>B;
+
+        Solution ob;
+        vector<long long> ans = ob.lcmAndGcd(A,B);
+        cout<<ans[0]<<" "<<ans[1]<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
