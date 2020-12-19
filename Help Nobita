@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;cin>>n;
+	while(n--){
+	    string h;
+	    cin>>h;
+	    map<char , int> m;
+	    for(int i=0;i<h.length();i++){
+	        m[h[i]]++;
+	    }
+	    int x=0,y=0;
+	    for(auto e:m){
+	        if((e.first - 'a' + 1)%2 ==0 and  (e.second)%2 ==0){x++;}
+            if((e.first - 'a' + 1)%2 !=0 and  (e.second)%2 !=0){y++;}
+	    }
+	    //cout<<x<<" "<<y<<endl;
+	    if((x+y)%2==0){cout<<"EVEN"<<endl;}
+	    else{cout<<"ODD"<<endl;}
+	}
+	return 0;
+}
