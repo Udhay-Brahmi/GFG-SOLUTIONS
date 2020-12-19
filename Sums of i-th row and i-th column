@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a,b;cin>>n;
+	while(n--){
+	    cin>>a>>b;
+	    int arr[a][b];
+	    vector<int> vec1,vec2;
+	    for(int i=0;i<a;i++){
+	        int sum=0;
+	        for(int j=0;j<b;j++){
+	            cin>>arr[i][j];
+	            sum+=arr[i][j];
+	        }
+	        vec1.push_back(sum);
+	    }
+	    bool gu=false;
+	    for(int i=0;i<b;i++){
+	        int sum=0;
+	        for(int j=0;j<a;j++){
+	            sum+=arr[j][i];
+	        }
+	        vec2.push_back(sum);
+	    }
+	        int k =min(vec1.size() , vec2.size());
+	        gu=true;
+	        for(int i=0;i<k;i++){
+	            if(vec1[i]==vec2[i]){cout<<"Yes"<<endl;gu=false;break;}
+	        }
+	        if(gu){cout<<"No"<<endl;}
+	}
+	return 0;
+}
