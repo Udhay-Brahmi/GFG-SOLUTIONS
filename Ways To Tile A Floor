@@ -1,0 +1,33 @@
+Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+class Solution {
+  public:
+    long long numberOfWays(long long N) {
+        long long int fab[N+3];
+        fab[0]=0;fab[1]=1;
+        for(long long int i=2;i<(N+3);i++){
+            fab[i] = (fab[i-1] + fab[i-2])%1000000007;
+        }
+        return fab[N+1];
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.numberOfWays(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
