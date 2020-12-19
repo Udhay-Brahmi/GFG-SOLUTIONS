@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool check(int n){
+    if(n==1)return 0;
+    for(int i=2;i<=sqrt(n);i++){
+        if(n%i==0)return 0;
+    }
+    return 1;
+}
+
+int main() {
+	//code
+	int n,a,k,d;cin>>n;
+	while(n--){
+	    cin>>a>>k;
+	    map<int , int> m;
+	    for(int i=0;i<a;i++){
+	        cin>>d;
+	        m[d]++;
+	    }
+	    vector<int> vec;
+	    for(auto e:m){
+	        if((e.second>=k) and check(e.second)){vec.push_back(e.first);}
+	    }
+	    if(vec.size()==0){cout<<-1<<endl;}
+	    else{sort(vec.begin() , vec.end());
+	    for(auto e : vec){
+	        cout<<e<<" ";
+	    }cout<<endl;
+	    }
+	}
+	return 0;
+}
