@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int n;cin>>n;
+	while(n--){
+	    unsigned short a,d;
+	    cin>>a>>d;
+	    d=d%16;
+	    cout<<(unsigned short)((a<<d)|(a>>(16-d)))<<endl;
+	    cout<<(unsigned short)((a>>d)|(a<<(16-d)))<<endl;
+	}
+	return 0;
+}
