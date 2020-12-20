@@ -1,0 +1,33 @@
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+// User function Template for C++
+class Solution {
+  public:
+    long long int setAllOddBits(long long int n) {
+        // code here
+        int d = ceil(log(n)/log(2));
+        int g = pow(2,d)-1;
+        int p = (0x55555555)&g;
+        return (n|p);
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long int n;
+        cin >> n;
+        Solution ob;
+        cout << ob.setAllOddBits(n) << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
