@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool prime(long long int N) {
+       for(long long int i=2;i<=sqrt(N);i++){
+           if(N%i==0)return false;
+       }
+       return true;
+}
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    long long int a;
+	    cin>>a;
+	    if(ceil(sqrt(a))==floor(sqrt(a)) and prime(sqrt(a))){cout<<1<<endl;}
+	    else{cout<<0<<endl;}
+	}
+	return 0;
+}
