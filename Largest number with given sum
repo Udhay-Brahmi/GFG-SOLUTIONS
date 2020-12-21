@@ -1,0 +1,38 @@
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+
+
+// Function to return Largest Number
+string largestNumber(int n, int sum){
+    int y = sum/9;
+    string h ="";
+    h+=string(y,'9');
+    y=sum%9;
+    if(y!=0){h+=to_string(y);}
+    if(h.length()==n)return h;
+    if(h.length()>n)return "-1";
+    return (h+ string((n-h.length()),'0'));
+}
+
+// { Driver Code Starts.
+int main()
+{
+    //taking testcases
+	int t;
+	cin>>t;
+
+	while(t--)
+	{
+	    //taking n and sum
+		int n,sum;
+		cin>>n>>sum;
+        
+        //function call
+		cout<<largestNumber(n, sum)<<endl;
+	}
+	return 0;
+}  // } Driver Code Ends
