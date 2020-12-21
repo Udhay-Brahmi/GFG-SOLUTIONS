@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    int arr[a][a]={0};
+	    for(int i=0;i<a;i++){
+	        for(int j=0;j<a;j++){
+	            cin>>arr[i][j];
+	        }
+	    }
+	    for(int i=0;i<a;i++){
+	        for(int j=0;j<a;j++){
+	            cout<<arr[j][i]<<" ";
+	        }
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
