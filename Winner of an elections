@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;string h;
+	    map<string ,int> m;
+	    while(a--){
+	        cin>>h;
+	        m[h]++;
+	    }
+	    string j;int max=INT_MIN;
+	    for(auto e:m){
+	        if(e.second>max){max=e.second;j=e.first;}
+	    }
+	    cout<<j<<endl;
+	}
+	return 0;
+}
