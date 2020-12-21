@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a;
+	cin>>n;
+	while(n--){
+	    cin>>a;
+	    int b;char c;
+	    map<int , int > m;
+	    while(a--){
+	        cin>>c>>b;
+	        if(c=='A'){m[b]++;}
+	        else{
+	            m[b]--;
+	            if(m[b]<=0)m.erase(b);
+	        }
+	        cout<<m.size()<<endl;
+	    }
+	}
+	return 0;
+}
