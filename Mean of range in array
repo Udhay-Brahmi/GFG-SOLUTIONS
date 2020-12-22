@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a,b,x,z;cin>>n;
+	while(n--){
+	    cin>>a>>b;int arr[a];
+	    for(int i=0;i<a;i++){
+	        cin>>arr[i];
+	    }
+	    while(b--){
+	        cin>>x>>z;
+	        int sum=0;
+	        for(int i=x;i<=z;i++){
+	            sum+=arr[i];
+	        }
+	        cout<<(sum)/(z-x+1)<<" ";
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
