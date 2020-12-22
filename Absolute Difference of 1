@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long int n,a,k,d;cin>>n;
+	while(n--){
+	    cin>>a>>k;
+	    bool mn=true;
+	    for(long long int i=0;i<a;i++){
+	        cin>>d;
+	        if(d<k){
+	            string h = to_string(d);bool gu=true;
+	            if(h.length()==1){gu=false;}
+	            else{for(int i=1;i<h.length();i++){
+	                if(abs((h[i]-'0') - (h[i-1] - '0'))!=1){gu=false;break;}
+	            }
+	            }
+	            if(gu){cout<<d<<" ";mn=false;}
+	        }
+	    }
+	    if(mn){cout<<-1<<" ";}
+	    cout<<endl;
+	}
+	return 0;
+}
