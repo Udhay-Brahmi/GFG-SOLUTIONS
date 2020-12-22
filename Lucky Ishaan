@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a;cin>>n;
+	while(n--){
+	  cin>>a;string h;
+	  map<long long int,int> m;
+	  for(int i=0;i<a;i++){
+	      cin>>h;
+	      long long int sum=0;
+	      for(int i=0;i<h.length();i++){
+	          sum+=(h[i]-'0');
+	      }
+	      m[sum]++;
+	  }
+	  cout<<m.size()<<endl;
+	}
+	return 0;
+}
