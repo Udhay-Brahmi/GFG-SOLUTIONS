@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a,b,k;cin>>n;
+	while(n--){
+	    cin>>a>>b;
+	    int a1[a],a2[b];
+	    for(int i=0;i<a;i++)cin>>a1[i];
+	    for(int i=0;i<b;i++)cin>>a2[i];
+	    cin>>k;
+	    sort(a1,a1+a);sort(a2,a2+b);
+	    int i=0,j=b-1,x,y,ma=INT_MAX;
+	    while(i<a && j>=0){
+	        int sum=a1[i]+a2[j];
+	        if(abs(sum-k)<ma){ma=abs(sum-k);x=a1[i];y=a2[j];}
+	        if(sum>k){j--;}
+	        else{i++;}
+	    }
+	    cout<<x<<" "<<y<<endl;
+	}
+	return 0;
+}
