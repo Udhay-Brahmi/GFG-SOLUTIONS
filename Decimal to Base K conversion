@@ -1,0 +1,38 @@
+// { Driver Code Starts
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+
+class Solution {
+  public:
+    long long changeBase(int N , int K) {
+        int arr[100000]={0},i=0;
+        while(N>0){
+            int r = N%K;
+            arr[i++]=r;
+            N=N/K;
+        }
+        long long res=0;
+        for(int j=i-1;j>=0;j--){res=res*10 + arr[j];}
+        return res;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N,K;
+        
+        cin>>N>>K;
+
+        Solution ob;
+        cout << ob.changeBase(N,K) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
