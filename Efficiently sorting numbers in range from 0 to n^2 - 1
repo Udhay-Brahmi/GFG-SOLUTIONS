@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a,d;cin>>n;
+	while(n--){
+	    cin>>a;
+	    map<int,int> m;
+	    for(int i=0;i<a;i++){
+	        cin>>d;
+	        m[d]++;
+	    }
+	    for(auto e:m){
+	        int  y = e.second;
+	        while(y--)cout<<e.first<<" ";
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
