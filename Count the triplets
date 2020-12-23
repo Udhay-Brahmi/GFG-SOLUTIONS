@@ -1,0 +1,57 @@
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+ // } Driver Code Ends
+
+
+//User function template for C++
+class Solution{
+public:	
+	
+	int countTriplet(int arr[], int n)
+	{
+        sort(arr,arr+n);int count=0;
+        for(int t = n-1;t>=0;t--){
+            int i=0,j=t-1;
+            while(i<j){
+                int sum =arr[i]+arr[j];
+                if(sum==arr[t]){count++;i++;}
+                else if(sum<arr[t]){i++;}
+                else{j--;}
+            }
+        }
+        return count;
+	}
+};
+
+// { Driver Code Starts.
+
+
+int main() 
+{
+   	
+   	ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
+    cout.tie(NULL);
+   
+   	int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+
+        int arr[n];
+        for(int i = 0; i < n; i++)
+        	cin >> arr[i];
+
+        Solution ob;
+        cout << ob.countTriplet(arr, n) << "\n";
+
+    }
+
+    return 0;
+}  // } Driver Code Ends
