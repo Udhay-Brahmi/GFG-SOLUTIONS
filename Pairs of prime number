@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	int arr[401]={0};
+	for(int i=2;i<=400;i++){
+	    int k=2*i;
+	    while(k<=400){
+	        arr[k]=1;
+	        k+=i;
+	    }
+	}
+	while(n--){
+	    cin>>a;
+	    for(int i=2;i<=a;i++){
+	        for(int j=2;j<=a;j++){
+	            if(arr[i]==0 and arr[j]==0 and i*j<= a){
+	                cout<<i<<" "<<j<<" ";
+	            }
+	        }
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
