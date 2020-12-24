@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    int arr[a];
+	    map<int,int> m;
+	    for(int i=0;i<a;i++){
+	        cin>>arr[i];
+	        m[arr[i]]=i;
+	    }
+	    int max=INT_MIN;
+	    for(int i=0;i<a;i++){
+	        int x = m[arr[i]];
+	        int z =abs(x-i);
+	        if(z>max){max=z;}
+	    }
+	    cout<<max<<endl;
+	}
+	return 0;
+}
