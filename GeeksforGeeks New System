@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    string h;
+	    map<string,int> m;
+	    while(a--){
+	        cin>>h;
+	        if(m[h]==0){cout<<"Verified"<<" ";}
+	        else{cout<<h<<m[h]<<" ";}
+	        m[h]++;
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
