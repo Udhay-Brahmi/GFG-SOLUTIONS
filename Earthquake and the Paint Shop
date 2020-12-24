@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n,a;cin>>n;
+	while(n--){
+	    cin>>a;
+	    cin.ignore(500, '\n');
+	    map<string,int> m;
+	    string h;
+	    while(a--){
+	        std::getline(cin,h);
+	        m[h]++;
+	    }
+	    for(auto e:m){
+	        cout<<e.first<<" "<<e.second<<endl;
+	    }
+	}
+	return 0;
+}
