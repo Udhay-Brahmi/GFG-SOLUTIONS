@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;cin>>n;
+	cin.ignore();
+	while(n--){
+	    string h,j="",l="";
+	    getline(cin,h);
+	    for(int i=0;i<h.length();i++){
+	        if(h[i]==' '){j+='@';}
+	        else{j+=h[i];}
+	    }
+	    string p="";j+='@';
+	    for(int i=0;i<j.length();i++){
+	        if(j[i]==92 and (j[i+1]=='t' || j[i+1]=='n')){p+='@';i++;}
+	        else{p+=j[i];}
+	    }
+	    int count=0;p+='@';
+	    for(int i=0;i<p.length();i++){
+	        if(p[i]=='@'){
+	            if(l!="")count++;
+	            l="";
+	        }
+	        else{l+=p[i];}
+	    }
+	    cout<<count<<endl;
+	}
+	return 0;
+}
