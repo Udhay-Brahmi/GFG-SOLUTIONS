@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	string cmp = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	unordered_map<char,int> m;
+	for(int i=0;i<cmp.length();i++){
+	    m[cmp[i]]=i;
+	}
+	int t;cin>>t;
+	cin.ignore();
+	while(t--){
+	    string str;
+	    getline(cin,str);
+	    int k=0,count=1,sum=0;
+	    for(int i=0;i<str.length();i++){
+	        if(str[i]==' '){k=0;count++;}
+	        else{
+	            sum+=(k+m[str[i]]);
+	            k++;
+	        }
+	    }
+	    cout<<(count*sum)<<endl;
+	}
+	return 0;
+}
