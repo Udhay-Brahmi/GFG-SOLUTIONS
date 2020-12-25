@@ -1,0 +1,70 @@
+// { Driver Code Starts
+ 
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+
+
+
+
+
+//User function template for C++
+class Solution{
+public:	
+
+	string findSum(string X, string Y) 
+	{
+	    reverse(X.begin(),X.end());
+	    reverse(Y.begin(),Y.end());
+	    int i=0,j=0,carry=0;string h="";
+	    while(i<X.length() && j<Y.length()){
+	        h+=to_string(( (X[i]-'0') + carry + (Y[i]-'0') )%10);
+	        carry = ((X[i]-'0')+carry+(Y[i]-'0'))/10;
+	        i++;j++;
+	    }
+	    while(i<X.length()){
+	        h+=to_string((X[i]-'0'+carry)%10);
+	        carry =(X[i]-'0'+carry)/10;
+	        i++;
+	    }
+	    while(j<Y.length()){
+	        h+=to_string((Y[j]-'0'+carry)%10);
+	        carry =(Y[j]-'0'+carry)/10;
+	        j++;
+	    }
+	    if(carry)h+=to_string(carry);
+	    reverse(h.begin() , h.end());
+	    string k="";
+	    for(int i=0;i<h.length();i++){
+	        if(h[i]!='0'){k = h.substr(i);break;}
+	    }
+	    if(k=="")k+='0';
+	    return k;
+	}
+};
+
+
+// { Driver Code Starts.
+
+int main() 
+{
+   	
+
+   	ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
+    cout.tie(NULL);
+   
+   	int t;
+   	cin >> t;
+   	while(t--)
+   	{
+   		string x, y;
+   		cin >> x >> y;
+        Solution ob;
+   		cout << ob.findSum(x, y) << "\n";
+   	}
+
+    return 0;
+}  // } Driver Code Ends
