@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int n;cin>>n;
+	while(n--){
+	    string h,j="";
+	    cin>>h;h+='#';char k='@',count=1;
+	    for(int i=0;i<h.length();i++){
+	        if(h[i]==k){count++;}
+	        else{k=h[i];
+	        if(count>9){char u =(count-10+'a');j+=h[i-1];j+=u;}
+	        else{j+=h[i-1]+to_string(count);}
+	        count=1;}
+	    }
+	    j=j.substr(2);
+	    reverse(j.begin(),j.end());
+	    cout<<j<<endl;
+	}
+	return 0;
+}
