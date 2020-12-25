@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;cin>>n;
+	cin.ignore();
+	while(n--){
+	    string h;
+	    getline(cin,h);
+	    long long int res=0;h+=" ";
+	    map<long long  ,string> mw;
+	    vector<long long int> vec;string k="";
+	    for(int i=0;i<h.length();i++){
+	        if(isdigit(h[i])){res = res*10 + (h[i]-'0');k+=h[i];}
+	        else{
+	            if(res!=0 || k=="0"){vec.push_back(res);mw[res]=k;}
+	            k="";
+	            res=0;
+	        }
+	    }
+	    long long int m =INT_MIN;bool gu=false;
+	    for(auto e:vec){
+	        string h = to_string(e);
+	        size_t found = h.find('9');
+	        if(found==string::npos){
+	            if(e>m){m=e;}
+	            gu=true;
+	        }
+	    }
+	    if(gu){cout<<mw[m]<<endl;}
+	    else{cout<<-1<<endl;}
+	}
+	return 0;
+}
