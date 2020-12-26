@@ -1,0 +1,41 @@
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+// User function Template for C+
+class Solution{
+public:
+    int modifiedFib(int n, int a, int b, int c)
+    {
+        long long f[7]; 
+        long long m=1000000007;
+	    f[1]=(a+b)%m;
+	    f[2]=(b+c)%m;
+	    f[3]=((c-a)+m)%m;
+	    f[4]=((-a-b)+m)%m;
+	    f[5]=((-b-c)+m)%m;
+	    f[0]=((a-c)+m)%m;
+	    n=n%6;
+	    return f[n];
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N, A, B, C;
+        cin>>N>>A>>B>>C;
+        
+        Solution ob;
+        cout<<ob.modifiedFib(N, A, B, C)<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
