@@ -1,0 +1,40 @@
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+//User function template for C++
+
+class Solution{
+    public:
+    int fibonacciDigits(long long N){
+        int fd[301];
+    fd[0] = 0;
+    fd[1] = 1;
+    fd[2] = 1;
+    for (int i = 3; i <= 300; i++) {
+        fd[i] = (fd[i-1]+fd[i-2]) % 100;
+    }
+    return fd[N%300];
+    }
+};
+
+// { Driver Code Starts.
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        long long N;
+        cin>>N;
+        Solution ob;
+        int ans=ob.fibonacciDigits(N);
+        if(ans/10)
+         cout<<ans;
+        else
+         cout<<0<<ans;
+        cout<<"\n";  
+    }
+}  // } Driver Code Ends
