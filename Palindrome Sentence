@@ -1,0 +1,46 @@
+// { Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h> 
+using namespace std; 
+
+
+ // } Driver Code Ends
+
+
+//User function template for C++
+class Solution{
+public:	
+	bool sentencePalindrome(string s) 
+	{
+	    string h="";
+	    for(int i=0;i<s.length();i++){
+	        if(isalpha(s[i]) || isdigit(s[i]))h+=s[i];
+	    } 
+	    int i=0,j=h.length()-1;
+	    while(i<j){
+	        if(h[i]!=h[j])return false;
+	        i++;j--;
+	    }
+	    return true;
+	}
+};
+
+// { Driver Code Starts.
+
+int main() 
+{ 
+    int t;
+    cin>>t;
+    cin.ignore();
+    while(t--)
+    {
+        string str;
+        getline(cin,str);
+        Solution ob;
+        cout<<ob.sentencePalindrome(str)<<endl;
+    }
+    return 0;
+}  
+
+  // } Driver Code Ends
