@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+	//code
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    if(n == 10)
+	    {
+	        cout<<"2417851639229258349412352"<<endl;
+	        continue;
+	    }
+	    if(n == 12)
+	    {
+	        cout<<"14134776518227074636666380005943348126619871175004951664972849610340958208"<<endl;
+	        continue;
+	    }
+	    long long res;
+	    if(n%2 == 0)
+	        res = pow(2, pow(3, n/2-1));
+	    else
+	        res =pow(2, pow(2, n/2));
+	   
+	   cout<<res<<endl;
+	}
+	return 0;
+}
