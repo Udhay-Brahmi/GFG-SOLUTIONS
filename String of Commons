@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;cin>>n;
+	while(n--){
+	    string h,j;
+	    cin>>h>>j;
+	    map<char,int> m;
+	    for(int i=0;i<h.length();i++){
+	        m[h[i]]++;
+	    }
+	    sort(j.begin(),j.end());bool gu=false;
+	    for(int i=0;i<j.length();i++){
+	        if(m[j[i]]!=0){gu=true;cout<<j[i];m[j[i]]=0;}
+	    }
+	    if(!gu){cout<<"nil";}
+	    cout<<endl;
+	}
+	return 0;
+}
